@@ -53,14 +53,20 @@ in buildGoModule {
   # Specify which subpackages to build
   # buildGoModule will automatically install binaries to $out/bin
   subPackages = [
-    "cmd/server"           # temporal-server
-    "cmd/tools/cassandra"  # temporal-cassandra-tool
-    "cmd/tools/sql"        # temporal-sql-tool
-    "cmd/tools/tdbg"       # tdbg
+    "cmd/server"           # Creates "server" binary
+    "cmd/tools/cassandra"  # Creates "cassandra" binary
+    "cmd/tools/sql"        # Creates "sql" binary
+    "cmd/tools/tdbg"       # Creates "tdbg" binary
   ];
 
-  # Post-install: add schema files
+  # Post-install: rename binaries and add schema files
   postInstall = ''
+    # Rename binaries to match expected names
+    mv $out/bin/server $out/bin/temporal-server
+    mv $out/bin/cassandra $out/bin/temporal-cassandra-tool
+    mv $out/bin/sql $out/bin/temporal-sql-tool
+    # tdbg is already correct
+
     # Install schema files for database initialization
     mkdir -p $out/share
     cp -r schema $out/share/
