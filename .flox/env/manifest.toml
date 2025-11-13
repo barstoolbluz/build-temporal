@@ -1,0 +1,43 @@
+# Flox build environment for Temporal
+# This provides build dependencies for compiling Temporal from source
+
+version = 1
+
+[install]
+# Go toolchain for building Temporal (Go-based project)
+go.pkg-path = "go"
+
+# Git for version control and fetching source
+git.pkg-path = "git"
+
+# Build tools
+gnumake.pkg-path = "gnumake"
+
+[vars]
+# Currently empty - add build-time variables if needed
+
+[hook]
+# Currently empty - add build hooks if needed
+
+[profile]
+# Empty - minimal output for build environment
+
+[services]
+# No services in build environment
+
+[include]
+# No additional environments composed
+
+[build]
+# Build configuration is in flake.nix and .flox/pkgs/temporal.nix
+# Use: flox build
+# Or: nix build .#temporal
+
+[options]
+# Systems this build environment supports
+systems = [
+  "x86_64-linux",
+  "aarch64-linux",
+  "x86_64-darwin",
+  "aarch64-darwin",
+]

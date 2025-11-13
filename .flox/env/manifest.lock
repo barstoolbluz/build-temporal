@@ -1,0 +1,397 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "version": 1,
+    "install": {
+      "git": {
+        "pkg-path": "git"
+      },
+      "gnumake": {
+        "pkg-path": "gnumake"
+      },
+      "go": {
+        "pkg-path": "go"
+      }
+    },
+    "hook": {},
+    "profile": {},
+    "options": {
+      "systems": [
+        "x86_64-linux",
+        "aarch64-linux",
+        "x86_64-darwin",
+        "aarch64-darwin"
+      ]
+    }
+  },
+  "packages": [
+    {
+      "attr_path": "git",
+      "broken": false,
+      "derivation": "/nix/store/0mw57m2x2xqcik05j8xbgjp40h1792a8-git-2.51.0.drv",
+      "description": "Distributed version control system",
+      "install_id": "git",
+      "license": "GPL-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "name": "git-2.51.0",
+      "pname": "git",
+      "rev": "b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "rev_count": 888552,
+      "rev_date": "2025-11-02T19:18:41Z",
+      "scrape_date": "2025-11-04T00:35:19.124516Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.51.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "doc": "/nix/store/fwx23zsz09rirgfp0r5kzsh7nbg6d9ff-git-2.51.0-doc",
+        "out": "/nix/store/1xqc4nc97vwmx6dqrk0zns79xncb5chw-git-2.51.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "git",
+      "broken": false,
+      "derivation": "/nix/store/8gg43r4nhx865690q0awrpkayxmhpass-git-2.51.0.drv",
+      "description": "Distributed version control system",
+      "install_id": "git",
+      "license": "GPL-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "name": "git-2.51.0",
+      "pname": "git",
+      "rev": "b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "rev_count": 888552,
+      "rev_date": "2025-11-02T19:18:41Z",
+      "scrape_date": "2025-11-05T16:28:58.821047Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.51.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "debug": "/nix/store/h5r9901ms52cxfqvm4pb0d2y24ddc9vv-git-2.51.0-debug",
+        "doc": "/nix/store/0dp21kpx7d2xh0y29y79wwggrhgnjks5-git-2.51.0-doc",
+        "out": "/nix/store/1xrbd5mmc64lx3hwm07kq27f445rs4xh-git-2.51.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "git",
+      "broken": false,
+      "derivation": "/nix/store/q2yad2kg3vpj0nrni028h99076hhpgr6-git-2.51.0.drv",
+      "description": "Distributed version control system",
+      "install_id": "git",
+      "license": "GPL-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "name": "git-2.51.0",
+      "pname": "git",
+      "rev": "b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "rev_count": 888552,
+      "rev_date": "2025-11-02T19:18:41Z",
+      "scrape_date": "2025-11-05T16:54:58.153579Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.51.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "doc": "/nix/store/sl8z2ijj21c8r4dxaa0vi4bv8xyavq26-git-2.51.0-doc",
+        "out": "/nix/store/wcnaxbjl7fkdfy20jgyj4pf6jarc36p8-git-2.51.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "git",
+      "broken": false,
+      "derivation": "/nix/store/dxy3pa9y8gbvnmbvggpl84wnd9idfb4r-git-2.51.0.drv",
+      "description": "Distributed version control system",
+      "install_id": "git",
+      "license": "GPL-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "name": "git-2.51.0",
+      "pname": "git",
+      "rev": "b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "rev_count": 888552,
+      "rev_date": "2025-11-02T19:18:41Z",
+      "scrape_date": "2025-11-05T17:20:48.256092Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.51.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "debug": "/nix/store/n2qv18fvl3d4jn4y1828mk89zpl83840-git-2.51.0-debug",
+        "doc": "/nix/store/b7382m8mvzm3336f6lj8wdbqwsclc0yx-git-2.51.0-doc",
+        "out": "/nix/store/60440kg5c51rrlpinkk2rkg020q5q6kv-git-2.51.0"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gnumake",
+      "broken": false,
+      "derivation": "/nix/store/q2w5hiwdryp7j24bhimd8w0j8iii2m5i-gnumake-4.4.1.drv",
+      "description": "Tool to control the generation of non-source files from sources",
+      "install_id": "gnumake",
+      "license": "GPL-3.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "name": "gnumake-4.4.1",
+      "pname": "gnumake",
+      "rev": "b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "rev_count": 888552,
+      "rev_date": "2025-11-02T19:18:41Z",
+      "scrape_date": "2025-11-04T00:35:19.232486Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "4.4.1",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "info": "/nix/store/gs4yxm5a7d3nprhki0nhvgkyf1qmwg6k-gnumake-4.4.1-info",
+        "man": "/nix/store/68mjxlv0jd70galxjx88978j220qvy2w-gnumake-4.4.1-man",
+        "out": "/nix/store/zr6nvq9ama3y1nhjpdhrgacrk9hg0p7m-gnumake-4.4.1"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gnumake",
+      "broken": false,
+      "derivation": "/nix/store/rjfni0l46ivfj0j8hibr2pjkq4fi84c3-gnumake-4.4.1.drv",
+      "description": "Tool to control the generation of non-source files from sources",
+      "install_id": "gnumake",
+      "license": "GPL-3.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "name": "gnumake-4.4.1",
+      "pname": "gnumake",
+      "rev": "b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "rev_count": 888552,
+      "rev_date": "2025-11-02T19:18:41Z",
+      "scrape_date": "2025-11-05T16:28:59.312990Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "4.4.1",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "debug": "/nix/store/gkgyv58r897z65fcl54ih23iip2d552z-gnumake-4.4.1-debug",
+        "info": "/nix/store/vnx2hz71ac4x62a1rr39ak2dmwybdd5r-gnumake-4.4.1-info",
+        "man": "/nix/store/dlpphdrnlizli5xfpyrc2h21yf47n2aw-gnumake-4.4.1-man",
+        "out": "/nix/store/qah1z8qz3jl5104x8wj00x9qqlxzd5n2-gnumake-4.4.1"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gnumake",
+      "broken": false,
+      "derivation": "/nix/store/vjsj1c734g68w4lih8ns2z34cyrq2h84-gnumake-4.4.1.drv",
+      "description": "Tool to control the generation of non-source files from sources",
+      "install_id": "gnumake",
+      "license": "GPL-3.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "name": "gnumake-4.4.1",
+      "pname": "gnumake",
+      "rev": "b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "rev_count": 888552,
+      "rev_date": "2025-11-02T19:18:41Z",
+      "scrape_date": "2025-11-05T16:54:58.285735Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "4.4.1",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "info": "/nix/store/yyq62s4yh31wx97g7r6f9lif178w47ng-gnumake-4.4.1-info",
+        "man": "/nix/store/lizzz78df6p2q84vxn0fq90z3ls4hvpd-gnumake-4.4.1-man",
+        "out": "/nix/store/y0fzfgy59x3kwhh535cvrn9r7i5wd9xq-gnumake-4.4.1"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gnumake",
+      "broken": false,
+      "derivation": "/nix/store/k064fvv07233fq01li4zxv86y2c56m7m-gnumake-4.4.1.drv",
+      "description": "Tool to control the generation of non-source files from sources",
+      "install_id": "gnumake",
+      "license": "GPL-3.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "name": "gnumake-4.4.1",
+      "pname": "gnumake",
+      "rev": "b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "rev_count": 888552,
+      "rev_date": "2025-11-02T19:18:41Z",
+      "scrape_date": "2025-11-05T17:20:48.801495Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "4.4.1",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "debug": "/nix/store/10jld6gf62ldl1da3126487g4gxs35v2-gnumake-4.4.1-debug",
+        "info": "/nix/store/b51jfnxlardqir240px0wnfp64gzxfkl-gnumake-4.4.1-info",
+        "man": "/nix/store/k1m93yfl4p51nnciskn2pbxqm2sv0mxm-gnumake-4.4.1-man",
+        "out": "/nix/store/frwvl0f18pk66clb8gqlby33wldx84aq-gnumake-4.4.1"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "go",
+      "broken": false,
+      "derivation": "/nix/store/2xb67c4l9xxlrvaxa9ilgg33h591scjf-go-1.25.2.drv",
+      "description": "Go Programming language",
+      "install_id": "go",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "name": "go-1.25.2",
+      "pname": "go",
+      "rev": "b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "rev_count": 888552,
+      "rev_date": "2025-11-02T19:18:41Z",
+      "scrape_date": "2025-11-04T00:35:19.240817Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.25.2",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/nkhf1yv637cp91y79zap7jxmm98v8pvj-go-1.25.2"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "go",
+      "broken": false,
+      "derivation": "/nix/store/rcv50wc3xkxlq1xbjsas1fgr5rbwk337-go-1.25.2.drv",
+      "description": "Go Programming language",
+      "install_id": "go",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "name": "go-1.25.2",
+      "pname": "go",
+      "rev": "b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "rev_count": 888552,
+      "rev_date": "2025-11-02T19:18:41Z",
+      "scrape_date": "2025-11-05T16:28:59.326449Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.25.2",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/p1d8jb1k4db3aiqwyp8b1kw4mja3qygx-go-1.25.2"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "go",
+      "broken": false,
+      "derivation": "/nix/store/1pkqcd6nfpd80zz7zww5jl8srgp0sx96-go-1.25.2.drv",
+      "description": "Go Programming language",
+      "install_id": "go",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "name": "go-1.25.2",
+      "pname": "go",
+      "rev": "b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "rev_count": 888552,
+      "rev_date": "2025-11-02T19:18:41Z",
+      "scrape_date": "2025-11-05T16:54:58.294187Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.25.2",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/xvwacgkf3x446qq3mdsh3v13f8935wa3-go-1.25.2"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "go",
+      "broken": false,
+      "derivation": "/nix/store/zffz4bwhyymy1l87064qgcyzfgqzlcz6-go-1.25.2.drv",
+      "description": "Go Programming language",
+      "install_id": "go",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "name": "go-1.25.2",
+      "pname": "go",
+      "rev": "b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+      "rev_count": 888552,
+      "rev_date": "2025-11-02T19:18:41Z",
+      "scrape_date": "2025-11-05T17:20:48.815668Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.25.2",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/k1kn1c59ss7nq6agdppzq3krwmi3xqy4-go-1.25.2"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    }
+  ]
+}

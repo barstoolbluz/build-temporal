@@ -1,0 +1,436 @@
+2025-11-13T16:34:21.703438Z DEBUG flox: FLOX_VERSION=1.7.5
+2025-11-13T16:34:21.703552Z DEBUG flox::config: Global config directory overridden path="/mnt/arkiv/daedalus/config/flox"
+2025-11-13T16:34:21.703692Z DEBUG flox::utils::init::sentry: Initializing Sentry with DSN: https://85c9526795f5047c99a5247aab616295:@o4506548203094016.ingest.us.sentry.io/4506548241825792
+2025-11-13T16:34:21.708710Z DEBUG flox: set _FLOX_PKGDB_VERBOSITY=2
+2025-11-13T16:34:21.712025Z DEBUG flox::config: Global config directory overridden path="/mnt/arkiv/daedalus/config/flox"
+2025-11-13T16:34:21.712401Z DEBUG flox::utils::update_notifications: Skipping update check in development mode
+2025-11-13T16:34:21.712483Z DEBUG flox::commands: Metrics collection enabled
+2025-11-13T16:34:21.712588Z DEBUG flox::utils::init::catalog_client: using catalog client with url: https://api.flox.dev
+2025-11-13T16:34:21.716646Z DEBUG flox::commands: feature flags configured=Features { upload: false, qa: false }
+2025-11-13T16:34:21.716782Z DEBUG check-upgrade: flox::utils::metrics: pushing entry to metrics buffer: MetricEntry { subcommand: Some("check-upgrade"), extras: {}, timestamp: 2025-11-13 16:34:21.716728211 +00:00:00, uuid: b40414b8-22b2-4377-87ff-80a0aac67ed0, flox_version: "1.7.5", os_family: Some("Linux"), os_family_release: Some("6.12.43+deb13-amd64"), os: Some("debian"), os_version: Some("13"), empty_flags: [] }
+2025-11-13T16:34:21.720779Z DEBUG check-upgrade: flox_rust_sdk::models::environment: detected concrete environment type: path
+2025-11-13T16:34:21.721014Z DEBUG check-upgrade: flox_rust_sdk::providers::upgrade_checks: created unlocked upgrade information guard upgrade_information_path="/tmp/build-temporal/.flox/cache/upgrade-checks.json"
+2025-11-13T16:34:21.721029Z DEBUG check-upgrade: flox_rust_sdk::providers::upgrade_checks: lock acquired upgrade_information_path="/tmp/build-temporal/.flox/cache/upgrade-checks.json"
+2025-11-13T16:34:21.721085Z DEBUG check-upgrade:check-upgrade: flox_rust_sdk::models::environment::core_environment: upgrading to_upgrade=""
+2025-11-13T16:34:21.721135Z DEBUG check-upgrade:check-upgrade: flox_rust_sdk::models::environment::core_environment: checking group membership for requested packages
+2025-11-13T16:34:21.721139Z DEBUG check-upgrade:check-upgrade: flox_rust_sdk::models::environment::core_environment: using catalog client to upgrade
+2025-11-13T16:34:21.721141Z DEBUG check-upgrade:check-upgrade: flox_rust_sdk::models::environment::core_environment: upgrading to_upgrade=""
+2025-11-13T16:34:21.721352Z DEBUG check-upgrade:check-upgrade:resolve_manifest:resolve: flox_rust_sdk::providers::catalog: resolving package groups n_groups=1
+2025-11-13T16:34:29.016366Z DEBUG check-upgrade:check-upgrade:resolve_manifest:resolve: flox_rust_sdk::providers::catalog: received resolved package groups n_groups=1
+2025-11-13T16:34:29.016499Z DEBUG check-upgrade:check-upgrade:resolve_manifest: flox_rust_sdk::models::lockfile: no resolution failures detected
+2025-11-13T16:34:29.017188Z DEBUG check-upgrade:check-upgrade:build: flox_rust_sdk::providers::buildenv: bulk checking validity of store_paths (paths passed to stdin) cmd=/nix/store/13dd4h1zp953x0ln7yyarr27d581svj0-nix-2.28.4/bin/nix --option extra-experimental-features 'nix-command flakes' path-info --offline --stdin
+2025-11-13T16:34:29.042526Z DEBUG check-upgrade:check-upgrade:build: flox_rust_sdk::providers::buildenv: bulk setting gc roots for store_paths cmd="echo '/nix/store/b7382m8mvzm3336f6lj8wdbqwsclc0yx-git-2.51.0-doc /nix/store/60440kg5c51rrlpinkk2rkg020q5q6kv-git-2.51.0 /nix/store/frwvl0f18pk66clb8gqlby33wldx84aq-gnumake-4.4.1 /nix/store/n2qv18fvl3d4jn4y1828mk89zpl83840-git-2.51.0-debug /nix/store/10jld6gf62ldl1da3126487g4gxs35v2-gnumake-4.4.1-debug /nix/store/k1kn1c59ss7nq6agdppzq3krwmi3xqy4-go-1.25.2 /nix/store/k1m93yfl4p51nnciskn2pbxqm2sv0mxm-gnumake-4.4.1-man /nix/store/b51jfnxlardqir240px0wnfp64gzxfkl-gnumake-4.4.1-info' | /nix/store/13dd4h1zp953x0ln7yyarr27d581svj0-nix-2.28.4/bin/nix --option extra-experimental-features 'nix-command flakes' build --stdin --offline -j 0 --out-link /home/daedalus/.cache/flox/process/.tmpXHpytv/temp-roots/pre-checked-paths"
+2025-11-13T16:34:29.065058Z DEBUG check-upgrade:check-upgrade:build: flox_rust_sdk::providers::buildenv: using 'auto' store
+2025-11-13T16:34:29.065067Z DEBUG check-upgrade:check-upgrade:build: flox_rust_sdk::providers::buildenv: building environment cmd=/nix/store/13dd4h1zp953x0ln7yyarr27d581svj0-nix-2.28.4/bin/nix --option extra-experimental-features 'nix-command flakes' --option pure-eval false --print-build-logs build --no-link --offline --json --file /nix/store/rimf7crvrgxr6zkbmwx9iqwkca18q3qw-flox-buildenv-0.0.1/lib/buildenv.nix --argstr manifestLock /home/daedalus/.cache/flox/process/.tmpXHpytv/.tmp0q1IiN
+2025-11-13T16:34:29.090002Z DEBUG check-upgrade: flox::commands::check_for_upgrades: Upgrading information with new result. diff={}
+2025-11-13T16:34:29.090107Z DEBUG check-upgrade: flox_rust_sdk::providers::upgrade_checks: wrote upgrade information upgrade_information_path="/tmp/build-temporal/.flox/cache/upgrade-checks.json"
+2025-11-13T16:34:29.090232Z DEBUG flox::commands: removing process tempdir temp_dir="/home/daedalus/.cache/flox/process/.tmpXHpytv"
+2025-11-13T16:34:29.091066Z DEBUG flox::utils::metrics: Sending metrics to https://z7qixlmjr3.execute-api.eu-north-1.amazonaws.com/prod/capture
+2025-11-13T16:34:29.091071Z DEBUG flox::utils::metrics: Metrics: [
+  {
+    "event": "cli-invocation",
+    "properties": {
+      "$current_url": "flox://services::status",
+      "$device_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "$lib": "flox-cli",
+      "$os": "Linux",
+      "$pathname": "services::status",
+      "$set": {
+        "$os": "Linux",
+        "flox_cli_uuid": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+        "flox_version": "1.7.5",
+        "kernel_version": "6.12.43+deb13-amd64",
+        "os": "debian",
+        "os_family": "Linux",
+        "os_family_release": "6.12.43+deb13-amd64",
+        "os_version": "13",
+        "test": true,
+        "used_rust_preview": true
+      },
+      "$set_once": {
+        "$initial_os": "Linux",
+        "initial_flox_version": "1.7.5",
+        "initial_kernel_version": "6.12.43+deb13-amd64",
+        "initial_os": "debian",
+        "initial_os_family": "Linux",
+        "initial_os_family_release": "6.12.43+deb13-amd64",
+        "initial_os_version": "13"
+      },
+      "ci": false,
+      "distinct_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "empty_flags": [],
+      "extras": {
+        "path_environment": "temporal-headless"
+      },
+      "kernel_version": "6.12.43+deb13-amd64",
+      "os": "debian",
+      "os_family": "Linux",
+      "os_family_release": "6.12.43+deb13-amd64",
+      "os_version": "13",
+      "subcommand": "services::status"
+    },
+    "timestamp": "2025-11-13T15:18:23.751439684Z",
+    "uuid": "b7cc8dd7-d585-4806-af12-9665c207020a"
+  },
+  {
+    "event": "cli-invocation",
+    "properties": {
+      "$current_url": "flox://services::logs",
+      "$device_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "$lib": "flox-cli",
+      "$os": "Linux",
+      "$pathname": "services::logs",
+      "$set": {
+        "$os": "Linux",
+        "flox_cli_uuid": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+        "flox_version": "1.7.5",
+        "kernel_version": "6.12.43+deb13-amd64",
+        "os": "debian",
+        "os_family": "Linux",
+        "os_family_release": "6.12.43+deb13-amd64",
+        "os_version": "13",
+        "test": true,
+        "used_rust_preview": true
+      },
+      "$set_once": {
+        "$initial_os": "Linux",
+        "initial_flox_version": "1.7.5",
+        "initial_kernel_version": "6.12.43+deb13-amd64",
+        "initial_os": "debian",
+        "initial_os_family": "Linux",
+        "initial_os_family_release": "6.12.43+deb13-amd64",
+        "initial_os_version": "13"
+      },
+      "ci": false,
+      "distinct_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "empty_flags": [],
+      "extras": {
+        "path_environment": "temporal-headless"
+      },
+      "kernel_version": "6.12.43+deb13-amd64",
+      "os": "debian",
+      "os_family": "Linux",
+      "os_family_release": "6.12.43+deb13-amd64",
+      "os_version": "13",
+      "subcommand": "services::logs"
+    },
+    "timestamp": "2025-11-13T15:18:27.708670159Z",
+    "uuid": "11ac7c1c-0581-45e7-ad76-024d04a3388e"
+  },
+  {
+    "event": "cli-invocation",
+    "properties": {
+      "$current_url": "flox://activate",
+      "$device_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "$lib": "flox-cli",
+      "$os": "Linux",
+      "$pathname": "activate",
+      "$set": {
+        "$os": "Linux",
+        "flox_cli_uuid": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+        "flox_version": "1.7.5",
+        "kernel_version": "6.12.43+deb13-amd64",
+        "os": "debian",
+        "os_family": "Linux",
+        "os_family_release": "6.12.43+deb13-amd64",
+        "os_version": "13",
+        "test": true,
+        "used_rust_preview": true
+      },
+      "$set_once": {
+        "$initial_os": "Linux",
+        "initial_flox_version": "1.7.5",
+        "initial_kernel_version": "6.12.43+deb13-amd64",
+        "initial_os": "debian",
+        "initial_os_family": "Linux",
+        "initial_os_family_release": "6.12.43+deb13-amd64",
+        "initial_os_version": "13"
+      },
+      "ci": false,
+      "distinct_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "empty_flags": [],
+      "extras": {
+        "mode": "dev",
+        "path_environment": "build-temporal",
+        "start_services": "false"
+      },
+      "kernel_version": "6.12.43+deb13-amd64",
+      "os": "debian",
+      "os_family": "Linux",
+      "os_family_release": "6.12.43+deb13-amd64",
+      "os_version": "13",
+      "subcommand": "activate"
+    },
+    "timestamp": "2025-11-13T16:34:21.697840586Z",
+    "uuid": "946341be-fed3-481a-bfd1-c3993eac173a"
+  },
+  {
+    "event": "cli-invocation",
+    "properties": {
+      "$current_url": "flox://check-upgrade",
+      "$device_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "$lib": "flox-cli",
+      "$os": "Linux",
+      "$pathname": "check-upgrade",
+      "$set": {
+        "$os": "Linux",
+        "flox_cli_uuid": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+        "flox_version": "1.7.5",
+        "kernel_version": "6.12.43+deb13-amd64",
+        "os": "debian",
+        "os_family": "Linux",
+        "os_family_release": "6.12.43+deb13-amd64",
+        "os_version": "13",
+        "test": true,
+        "used_rust_preview": true
+      },
+      "$set_once": {
+        "$initial_os": "Linux",
+        "initial_flox_version": "1.7.5",
+        "initial_kernel_version": "6.12.43+deb13-amd64",
+        "initial_os": "debian",
+        "initial_os_family": "Linux",
+        "initial_os_family_release": "6.12.43+deb13-amd64",
+        "initial_os_version": "13"
+      },
+      "ci": false,
+      "distinct_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "empty_flags": [],
+      "extras": {},
+      "kernel_version": "6.12.43+deb13-amd64",
+      "os": "debian",
+      "os_family": "Linux",
+      "os_family_release": "6.12.43+deb13-amd64",
+      "os_version": "13",
+      "subcommand": "check-upgrade"
+    },
+    "timestamp": "2025-11-13T16:34:21.716728211Z",
+    "uuid": "4f745fd8-f4a1-47f1-a0bb-acbfc5dc5b12"
+  },
+  {
+    "event": "cli-invocation",
+    "properties": {
+      "$current_url": "flox://activate",
+      "$device_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "$lib": "flox-cli",
+      "$os": "Linux",
+      "$pathname": "activate",
+      "$set": {
+        "$os": "Linux",
+        "flox_cli_uuid": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+        "flox_version": "1.7.5",
+        "kernel_version": "6.12.43+deb13-amd64",
+        "os": "debian",
+        "os_family": "Linux",
+        "os_family_release": "6.12.43+deb13-amd64",
+        "os_version": "13",
+        "test": true,
+        "used_rust_preview": true
+      },
+      "$set_once": {
+        "$initial_os": "Linux",
+        "initial_flox_version": "1.7.5",
+        "initial_kernel_version": "6.12.43+deb13-amd64",
+        "initial_os": "debian",
+        "initial_os_family": "Linux",
+        "initial_os_family_release": "6.12.43+deb13-amd64",
+        "initial_os_version": "13"
+      },
+      "ci": false,
+      "distinct_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "empty_flags": [],
+      "extras": {
+        "has_includes": "false"
+      },
+      "kernel_version": "6.12.43+deb13-amd64",
+      "os": "debian",
+      "os_family": "Linux",
+      "os_family_release": "6.12.43+deb13-amd64",
+      "os_version": "13",
+      "subcommand": "activate"
+    },
+    "timestamp": "2025-11-13T16:34:22.257441339Z",
+    "uuid": "e0609f18-9c67-480a-ad70-08838dee910e"
+  },
+  {
+    "event": "cli-invocation",
+    "properties": {
+      "$current_url": "flox://activate#version",
+      "$device_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "$lib": "flox-cli",
+      "$os": "Linux",
+      "$pathname": "activate#version",
+      "$set": {
+        "$os": "Linux",
+        "flox_cli_uuid": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+        "flox_version": "1.7.5",
+        "kernel_version": "6.12.43+deb13-amd64",
+        "os": "debian",
+        "os_family": "Linux",
+        "os_family_release": "6.12.43+deb13-amd64",
+        "os_version": "13",
+        "test": true,
+        "used_rust_preview": true
+      },
+      "$set_once": {
+        "$initial_os": "Linux",
+        "initial_flox_version": "1.7.5",
+        "initial_kernel_version": "6.12.43+deb13-amd64",
+        "initial_os": "debian",
+        "initial_os_family": "Linux",
+        "initial_os_family_release": "6.12.43+deb13-amd64",
+        "initial_os_version": "13"
+      },
+      "ci": false,
+      "distinct_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "empty_flags": [],
+      "extras": {
+        "lockfile_version": "1"
+      },
+      "kernel_version": "6.12.43+deb13-amd64",
+      "os": "debian",
+      "os_family": "Linux",
+      "os_family_release": "6.12.43+deb13-amd64",
+      "os_version": "13",
+      "subcommand": "activate#version"
+    },
+    "timestamp": "2025-11-13T16:34:22.919170779Z",
+    "uuid": "a88d356d-a375-4239-8dd9-4af027918cdf"
+  },
+  {
+    "event": "cli-invocation",
+    "properties": {
+      "$current_url": "flox://activate#version",
+      "$device_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "$lib": "flox-cli",
+      "$os": "Linux",
+      "$pathname": "activate#version",
+      "$set": {
+        "$os": "Linux",
+        "flox_cli_uuid": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+        "flox_version": "1.7.5",
+        "kernel_version": "6.12.43+deb13-amd64",
+        "os": "debian",
+        "os_family": "Linux",
+        "os_family_release": "6.12.43+deb13-amd64",
+        "os_version": "13",
+        "test": true,
+        "used_rust_preview": true
+      },
+      "$set_once": {
+        "$initial_os": "Linux",
+        "initial_flox_version": "1.7.5",
+        "initial_kernel_version": "6.12.43+deb13-amd64",
+        "initial_os": "debian",
+        "initial_os_family": "Linux",
+        "initial_os_family_release": "6.12.43+deb13-amd64",
+        "initial_os_version": "13"
+      },
+      "ci": false,
+      "distinct_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "empty_flags": [],
+      "extras": {
+        "lockfile_version": "1"
+      },
+      "kernel_version": "6.12.43+deb13-amd64",
+      "os": "debian",
+      "os_family": "Linux",
+      "os_family_release": "6.12.43+deb13-amd64",
+      "os_version": "13",
+      "subcommand": "activate#version"
+    },
+    "timestamp": "2025-11-13T16:34:22.919284039Z",
+    "uuid": "4db0da98-5629-45a0-90f9-87bade76288e"
+  },
+  {
+    "event": "cli-invocation",
+    "properties": {
+      "$current_url": "flox://activate",
+      "$device_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "$lib": "flox-cli",
+      "$os": "Linux",
+      "$pathname": "activate",
+      "$set": {
+        "$os": "Linux",
+        "flox_cli_uuid": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+        "flox_version": "1.7.5",
+        "kernel_version": "6.12.43+deb13-amd64",
+        "os": "debian",
+        "os_family": "Linux",
+        "os_family_release": "6.12.43+deb13-amd64",
+        "os_version": "13",
+        "test": true,
+        "used_rust_preview": true
+      },
+      "$set_once": {
+        "$initial_os": "Linux",
+        "initial_flox_version": "1.7.5",
+        "initial_kernel_version": "6.12.43+deb13-amd64",
+        "initial_os": "debian",
+        "initial_os_family": "Linux",
+        "initial_os_family_release": "6.12.43+deb13-amd64",
+        "initial_os_version": "13"
+      },
+      "ci": false,
+      "distinct_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "empty_flags": [],
+      "extras": {
+        "shell": "bash"
+      },
+      "kernel_version": "6.12.43+deb13-amd64",
+      "os": "debian",
+      "os_family": "Linux",
+      "os_family_release": "6.12.43+deb13-amd64",
+      "os_version": "13",
+      "subcommand": "activate"
+    },
+    "timestamp": "2025-11-13T16:34:22.919433373Z",
+    "uuid": "ef6a677b-75bb-4aea-aa12-7a2d12ddf0d8"
+  },
+  {
+    "event": "cli-invocation",
+    "properties": {
+      "$current_url": "flox://build",
+      "$device_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "$lib": "flox-cli",
+      "$os": "Linux",
+      "$pathname": "build",
+      "$set": {
+        "$os": "Linux",
+        "flox_cli_uuid": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+        "flox_version": "1.7.5",
+        "kernel_version": "6.12.43+deb13-amd64",
+        "os": "debian",
+        "os_family": "Linux",
+        "os_family_release": "6.12.43+deb13-amd64",
+        "os_version": "13",
+        "test": true,
+        "used_rust_preview": true
+      },
+      "$set_once": {
+        "$initial_os": "Linux",
+        "initial_flox_version": "1.7.5",
+        "initial_kernel_version": "6.12.43+deb13-amd64",
+        "initial_os": "debian",
+        "initial_os_family": "Linux",
+        "initial_os_family_release": "6.12.43+deb13-amd64",
+        "initial_os_version": "13"
+      },
+      "ci": false,
+      "distinct_id": "b40414b8-22b2-4377-87ff-80a0aac67ed0",
+      "empty_flags": [],
+      "extras": {
+        "path_environment": "build-temporal"
+      },
+      "kernel_version": "6.12.43+deb13-amd64",
+      "os": "debian",
+      "os_family": "Linux",
+      "os_family_release": "6.12.43+deb13-amd64",
+      "os_version": "13",
+      "subcommand": "build"
+    },
+    "timestamp": "2025-11-13T16:34:29.085204392Z",
+    "uuid": "91791389-72d4-4944-8ea4-a895831c61a0"
+  }
+]
+2025-11-13T16:34:29.477401Z DEBUG flox::utils::metrics: Metrics sent result=Response { url: "https://z7qixlmjr3.execute-api.eu-north-1.amazonaws.com/prod/capture", status: 200, headers: {"date": "Thu, 13 Nov 2025 16:34:34 GMT", "content-type": "application/json", "content-length": "0", "connection": "keep-alive", "x-amzn-requestid": "7f10667c-b45e-4779-a0d6-7b5a84dae652", "x-amz-apigw-id": "T_ZINGNtAi0Etyg=", "x-amzn-trace-id": "Root=1-6916089a-212928b770d1aa5e3ea4653c;Parent=79b267fb92e2f6e7;Sampled=0"} }

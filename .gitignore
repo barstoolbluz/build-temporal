@@ -1,0 +1,22 @@
+# Build outputs
+result
+result-*
+
+# Flox generated files
+.flox/cache/
+.flox/run/
+
+# Nix build artifacts
+*.drv
+*.narinfo
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,18 @@
+2025-11-13T16:34:22.948460Z DEBUG flox_watchdog::sentry: Initializing Sentry with DSN: https://85c9526795f5047c99a5247aab616295:@o4506548203094016.ingest.us.sentry.io/4506548241825792
+2025-11-13T16:34:22.954121Z DEBUG sentry: enabled sentry client for DSN https://85c9526795f5047c99a5247aab616295:@o4506548203094016.ingest.us.sentry.io/4506548241825792
+2025-11-13T16:34:22.954146Z DEBUG watchdog{socket="/run/user/1000/flox.58f808c8.sock" log_dir="/tmp/build-temporal/.flox/log"}: flox_watchdog: starting
+2025-11-13T16:34:22.954172Z DEBUG watchdog{socket="/run/user/1000/flox.58f808c8.sock" log_dir="/tmp/build-temporal/.flox/log"}: flox_watchdog: checked socket path="/run/user/1000/flox.58f808c8.sock" exists=false
+2025-11-13T16:34:22.954176Z  INFO watchdog{socket="/run/user/1000/flox.58f808c8.sock" log_dir="/tmp/build-temporal/.flox/log"}: flox_watchdog: watchdog is on duty this_pid=14968 target_activation_id="3fb5b199"
+2025-11-13T16:34:22.954234Z DEBUG watchdog{socket="/run/user/1000/flox.58f808c8.sock" log_dir="/tmp/build-temporal/.flox/log"}: flox_watchdog: waiting for termination
+2025-11-13T16:34:22.954238Z DEBUG flox_watchdog::logger: still watching, woof woof
+2025-11-13T16:34:37.207707Z  INFO watchdog{socket="/run/user/1000/flox.58f808c8.sock" log_dir="/tmp/build-temporal/.flox/log"}: flox_watchdog: running cleanup after all PIDs terminated
+2025-11-13T16:34:37.207728Z DEBUG watchdog{socket="/run/user/1000/flox.58f808c8.sock" log_dir="/tmp/build-temporal/.flox/log"}: flox_watchdog: running cleanup
+2025-11-13T16:34:37.207736Z DEBUG watchdog{socket="/run/user/1000/flox.58f808c8.sock" log_dir="/tmp/build-temporal/.flox/log"}: flox_watchdog: did not shut down process-compose reason="no socket"
+2025-11-13T16:34:37.207866Z DEBUG watchdog{socket="/run/user/1000/flox.58f808c8.sock" log_dir="/tmp/build-temporal/.flox/log"}: flox_watchdog: finished cleanup
+2025-11-13T16:34:37.207889Z DEBUG sentry: dropping client guard -> disposing client
+2025-11-13T16:34:37.207994Z DEBUG sentry: client close; request transport to shut down
+2025-11-13T16:34:37.208082Z DEBUG reqwest::connect: starting new connection: https://o4506548203094016.ingest.us.sentry.io/
+2025-11-13T16:34:37.209601Z DEBUG hyper_util::client::legacy::connect::http: connecting to 34.120.195.249:443
+2025-11-13T16:34:37.214990Z DEBUG hyper_util::client::legacy::connect::http: connected to 34.120.195.249:443
+2025-11-13T16:34:37.248632Z DEBUG hyper_util::client::legacy::pool: pooling idle connection for ("https", o4506548203094016.ingest.us.sentry.io)
+2025-11-13T16:34:37.248673Z DEBUG sentry: Get response: `{"id":"5b0c7b7bece9424f9b0293f0201ccb6c"}`
