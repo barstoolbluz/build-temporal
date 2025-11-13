@@ -10,7 +10,7 @@ let
   # Server: https://github.com/temporalio/temporal/releases
   # CLI: https://github.com/temporalio/cli/releases
   serverVersion = "1.29.1";
-  cliVersion = "1.1.4";
+  cliVersion = "1.5.1";
 
   # ============================================================================
   # TEMPORAL SERVER
