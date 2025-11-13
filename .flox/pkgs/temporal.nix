@@ -80,10 +80,10 @@ let
       owner = "temporalio";
       repo = "cli";
       rev = "v${cliVersion}";
-      hash = "";  # Will get from build error
+      hash = "sha256-Y/hTD31WUcVn/OBuNwdhbjDZd36EKbOJRr9PFDKHifg=";
     };
 
-    vendorHash = "";  # Will get from build error
+    vendorHash = "sha256-JxjW91aYM8cmekA8um2R60HXGQJK/Koh4yhnozYiMRU=";
 
     env.CGO_ENABLED = 0;
 
