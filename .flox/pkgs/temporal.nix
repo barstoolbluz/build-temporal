@@ -26,13 +26,13 @@ in buildGoModule {
   # When updating version, set vendorHash = "" and run `flox build` to get correct hash
   vendorHash = "sha256-HW2j8swbaWwU1i3udqlT8VyFreML6ZH14zWxF8L5NTQ=";
 
-  # Disable CGO for static binary compilation
-  CGO_ENABLED = 0;
-
   # Build flags
   # - Disable grpc modules to reduce binary size
   # - Add test_dep for additional testing utilities
   tags = [ "test_dep" ];
+
+  # Disable CGO for static binary compilation
+  env.CGO_ENABLED = 0;
 
   # Linker flags to strip debugging symbols and reduce size
   ldflags = [
