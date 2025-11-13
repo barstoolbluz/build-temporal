@@ -50,29 +50,20 @@ in buildGoModule {
   # - Are tested upstream in CI/CD
   doCheck = false;
 
-  # Installation phase
-  # Temporal builds multiple binaries for different purposes
-  installPhase = ''
-    runHook preInstall
+  # Specify which subpackages to build
+  # buildGoModule will automatically install binaries to $out/bin
+  subPackages = [
+    "cmd/server"           # temporal-server
+    "cmd/tools/cassandra"  # temporal-cassandra-tool
+    "cmd/tools/sql"        # temporal-sql-tool
+    "cmd/tools/tdbg"       # tdbg
+  ];
 
-    # Create output directories
-    mkdir -p $out/bin
-    mkdir -p $out/share/schema
-
-    # Install server binary
-    install -Dm755 temporal-server $out/bin/temporal-server
-
-    # Install database tools
-    install -Dm755 temporal-cassandra-tool $out/bin/temporal-cassandra-tool
-    install -Dm755 temporal-sql-tool $out/bin/temporal-sql-tool
-
-    # Install debugging utility
-    install -Dm755 tdbg $out/bin/tdbg
-
+  # Post-install: add schema files
+  postInstall = ''
     # Install schema files for database initialization
+    mkdir -p $out/share
     cp -r schema $out/share/
-
-    runHook postInstall
   '';
 
   # Metadata
