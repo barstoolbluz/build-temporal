@@ -2,92 +2,138 @@
 , stdenv
 , fetchFromGitHub
 , buildGoModule
+, symlinkJoin
 }:
 
 let
   # Version information - UPDATE THESE FOR NEW RELEASES
-  # Find releases at: https://github.com/temporalio/temporal/releases
-  version = "1.29.1";
+  # Server: https://github.com/temporalio/temporal/releases
+  # CLI: https://github.com/temporalio/cli/releases
+  serverVersion = "1.29.1";
+  cliVersion = "1.1.4";
 
-  # Source code from GitHub
-  # When updating version, set hash = "" and run `flox build` to get correct hash
-  src = fetchFromGitHub {
-    owner = "temporalio";
-    repo = "temporal";
-    rev = "v${version}";
-    hash = "sha256-rUm1zHxM0KYPgKpK7w0XLU7aF3H6sECgSe/UtbNdgJM=";
+  # ============================================================================
+  # TEMPORAL SERVER
+  # ============================================================================
+
+  temporal-server = buildGoModule {
+    pname = "temporal-server";
+    version = serverVersion;
+
+    src = fetchFromGitHub {
+      owner = "temporalio";
+      repo = "temporal";
+      rev = "v${serverVersion}";
+      hash = "sha256-rUm1zHxM0KYPgKpK7w0XLU7aF3H6sECgSe/UtbNdgJM=";
+    };
+
+    vendorHash = "sha256-HW2j8swbaWwU1i3udqlT8VyFreML6ZH14zWxF8L5NTQ=";
+
+    # Build flags
+    tags = [ "test_dep" ];
+    env.CGO_ENABLED = 0;
+
+    ldflags = [
+      "-s"  # Strip symbol table
+      "-w"  # Strip DWARF debugging info
+    ];
+
+    excludedPackages = [ "./build" ];
+    doCheck = false;
+
+    # Build server and tools
+    subPackages = [
+      "cmd/server"
+      "cmd/tools/cassandra"
+      "cmd/tools/sql"
+      "cmd/tools/tdbg"
+    ];
+
+    postInstall = ''
+      # Rename binaries to match expected names
+      mv $out/bin/server $out/bin/temporal-server
+      mv $out/bin/cassandra $out/bin/temporal-cassandra-tool
+      mv $out/bin/sql $out/bin/temporal-sql-tool
+
+      # Install schema files
+      mkdir -p $out/share
+      cp -r schema $out/share/
+    '';
+
+    meta = with lib; {
+      description = "Temporal server and database tools";
+      homepage = "https://temporal.io";
+      license = licenses.mit;
+      platforms = platforms.unix;
+    };
   };
 
-in buildGoModule {
-  pname = "temporal";
-  inherit version src;
+  # ============================================================================
+  # TEMPORAL CLI
+  # ============================================================================
 
-  # Go module dependencies hash
-  # When updating version, set vendorHash = "" and run `flox build` to get correct hash
-  vendorHash = "sha256-HW2j8swbaWwU1i3udqlT8VyFreML6ZH14zWxF8L5NTQ=";
+  temporal-cli = buildGoModule {
+    pname = "temporal-cli";
+    version = cliVersion;
 
-  # Build flags
-  # - Disable grpc modules to reduce binary size
-  # - Add test_dep for additional testing utilities
-  tags = [ "test_dep" ];
+    src = fetchFromGitHub {
+      owner = "temporalio";
+      repo = "cli";
+      rev = "v${cliVersion}";
+      hash = "";  # Will get from build error
+    };
 
-  # Disable CGO for static binary compilation
-  env.CGO_ENABLED = 0;
+    vendorHash = "";  # Will get from build error
 
-  # Linker flags to strip debugging symbols and reduce size
-  ldflags = [
-    "-s"  # Strip symbol table
-    "-w"  # Strip DWARF debugging info
+    env.CGO_ENABLED = 0;
+
+    ldflags = [
+      "-s"
+      "-w"
+    ];
+
+    doCheck = false;
+
+    # The CLI repo builds a single "temporal" binary
+    subPackages = [ "cmd/temporal" ];
+
+    meta = with lib; {
+      description = "Temporal CLI for workflow management";
+      homepage = "https://temporal.io";
+      license = licenses.mit;
+      platforms = platforms.unix;
+    };
+  };
+
+# ============================================================================
+# COMBINED PACKAGE
+# ============================================================================
+
+in symlinkJoin {
+  name = "temporal-${serverVersion}";
+
+  paths = [
+    temporal-server
+    temporal-cli
   ];
 
-  # Exclude build directory from source tree
-  # This directory contains build artifacts and CI configurations
-  excludedPackages = [ "./build" ];
-
-  # Skip tests - temporal has extensive integration tests that:
-  # - Require external services (Cassandra, PostgreSQL, Elasticsearch)
-  # - Take significant time to run
-  # - Are tested upstream in CI/CD
-  doCheck = false;
-
-  # Specify which subpackages to build
-  # buildGoModule will automatically install binaries to $out/bin
-  subPackages = [
-    "cmd/server"           # Creates "server" binary
-    "cmd/tools/cassandra"  # Creates "cassandra" binary
-    "cmd/tools/sql"        # Creates "sql" binary
-    "cmd/tools/tdbg"       # Creates "tdbg" binary
-  ];
-
-  # Post-install: rename binaries and add schema files
-  postInstall = ''
-    # Rename binaries to match expected names
-    mv $out/bin/server $out/bin/temporal-server
-    mv $out/bin/cassandra $out/bin/temporal-cassandra-tool
-    mv $out/bin/sql $out/bin/temporal-sql-tool
-    # tdbg is already correct
-
-    # Install schema files for database initialization
-    mkdir -p $out/share
-    cp -r schema $out/share/
-  '';
-
-  # Metadata
   meta = with lib; {
-    description = "Temporal service (orchestration platform)";
+    description = "Temporal orchestration platform (server + CLI)";
     longDescription = ''
-      Temporal is a microservice orchestration platform which enables developers
-      to build scalable applications without sacrificing productivity or reliability.
+      Complete Temporal platform including:
 
-      This package includes:
-      - temporal-server: Main server binary
+      Server (v${serverVersion}):
+      - temporal-server: Main orchestration server
       - temporal-sql-tool: SQL database migration tool
       - temporal-cassandra-tool: Cassandra database migration tool
       - tdbg: Debugging and diagnostic utility
       - Database schemas for PostgreSQL, MySQL, SQLite, and Cassandra
+
+      CLI (v${cliVersion}):
+      - temporal: Command-line interface for workflow management
     '';
     homepage = "https://temporal.io";
-    changelog = "https://github.com/temporalio/temporal/releases/tag/v${version}";
+    changelog = "https://github.com/temporalio/temporal/releases/tag/v${serverVersion}";
     license = licenses.mit;
     maintainers = [ ];
     platforms = platforms.unix;
