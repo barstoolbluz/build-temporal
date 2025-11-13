@@ -15,7 +15,7 @@ let
     owner = "temporalio";
     repo = "temporal";
     rev = "v${version}";
-    hash = "sha256-8hl8FJ9TRJk6A/qPa2O6CsB7Y4VX7uM4XwXK8wX3VmY=";
+    hash = "sha256-rUm1zHxM0KYPgKpK7w0XLU7aF3H6sECgSe/UtbNdgJM=";
   };
 
 in buildGoModule {
