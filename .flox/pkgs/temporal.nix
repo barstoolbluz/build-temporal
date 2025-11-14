@@ -111,6 +111,7 @@ let
 
 in symlinkJoin {
   name = "temporal-${serverVersion}";
+  version = serverVersion;
 
   paths = [
     temporal-server
