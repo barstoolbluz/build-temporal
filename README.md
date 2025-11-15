@@ -104,13 +104,19 @@ See [BUILD_VERSIONS.md](BUILD_VERSIONS.md) for detailed update process.
 
 ## Why This Exists
 
-The nixpkgs `temporal` package is great, but:
+The nixpkgs `temporal` package exists and works fine in nix-shell, but has compatibility issues when used with Flox:
+- **Flox-specific TLS conflict** - Installing both `temporal@1.29.1` and `temporal-cli@1.5.1` from nixpkgs in the same Flox environment causes a glibc thread-local storage error (this does not affect nix-shell):
+  ```
+  Inconsistency detected by ld.so: ../elf/dl-tls.c: 617: _dl_allocate_tls_init:
+  Assertion `listp->slotinfo[cnt].gen <= GL(dl_tls_generation)' failed!
+  ```
+- **Combined package** - This build combines both server and CLI into a single package, avoiding composition issues
 - **Update lag** - nixpkgs may lag behind upstream releases
 - **Version control** - Need specific versions for production
 - **Custom builds** - May want patches or build flag modifications
-- **Learning** - Understanding how Temporal is built
 
 This repo gives you:
+- ✅ **Working build** - No TLS conflicts, combines server + CLI
 - ✅ Track latest Temporal releases
 - ✅ Pin to specific versions
 - ✅ Reproducible builds
@@ -123,12 +129,17 @@ This repo gives you:
 | Feature | nixpkgs | build-temporal |
 |---------|---------|----------------|
 | Temporal version | May lag | Track upstream |
+| Server + CLI | Separate packages | Combined in one |
+| nix-shell compatibility | ✅ Works | ✅ Works |
+| Flox compatibility | ❌ TLS conflict when combined | ✅ Works correctly |
 | Update speed | Depends on maintainers | Immediate |
 | Customization | Fork nixpkgs | Edit one file |
 | Version pinning | Specific nixpkgs rev | Direct version field |
 | Publishing | N/A | `flox publish` |
 
-Both are valid! Use nixpkgs for stability, build-temporal for control.
+**Recommendation:**
+- For **nix-shell**: Either works fine
+- For **Flox environments**: Use build-temporal to avoid TLS conflicts
 
 ## Project Structure
 
@@ -262,6 +273,47 @@ Improvements welcome! Common contributions:
 - Improve build flags or optimization
 - Add additional helper scripts
 - Platform-specific fixes
+
+## Troubleshooting
+
+### TLS Error with nixpkgs temporal in Flox
+
+If you see this error when using nixpkgs `temporal` and `temporal-cli` together **in a Flox environment**:
+```
+Inconsistency detected by ld.so: ../elf/dl-tls.c: 617: _dl_allocate_tls_init:
+Assertion `listp->slotinfo[cnt].gen <= GL(dl_tls_generation)' failed!
+```
+
+**Cause:** This is a glibc thread-local storage conflict between the two separate nixpkgs packages when installed together in any Flox environment (whether single or composed). This issue is specific to how Flox manages package environments and does not affect plain nix-shell usage.
+
+**Note:** The nixpkgs packages work fine in `nix-shell`:
+```bash
+# This works fine
+nix-shell -p temporal temporal-cli --run "temporal-server --version"
+```
+
+**Solution for Flox:** Use this custom build instead:
+```toml
+[install]
+temporal.pkg-path = "barstoolbluz/temporal"
+# Provides both server and CLI without conflicts
+```
+
+**Validation:**
+```bash
+# Test that it works in Flox
+flox activate -- bash -c 'temporal-server --version && temporal --version'
+```
+
+### Build Fails with Hash Mismatch
+
+If `flox build` fails with a hash mismatch, this is normal during version updates:
+1. The error message will show the correct hash
+2. Copy the hash from the error message
+3. Update `.flox/pkgs/temporal.nix` with the correct hash
+4. Run `flox build` again
+
+See [BUILD_VERSIONS.md](BUILD_VERSIONS.md) for detailed hash update process.
 
 ## Support
 
